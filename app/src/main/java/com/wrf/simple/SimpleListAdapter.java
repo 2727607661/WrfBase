@@ -1,4 +1,4 @@
-package base.wrf.com.wrfbase;
+package com.wrf.simple;
 
 import android.content.Context;
 import android.view.View;
@@ -7,22 +7,24 @@ import android.widget.ImageView;
 import com.wrf.base.AbstractBaseAdapter;
 import com.wrf.utils.ImageLoaderUtil;
 
+import base.wrf.com.wrfbase.R;
+
 /**
  * Created by wrf on 2016/1/26.
  */
 
-public class ListAdapter extends AbstractBaseAdapter<String, ListAdapter.ListViewHolder> {
+public class SimpleListAdapter extends AbstractBaseAdapter<String, SimpleListAdapter.ListViewHolder> {
     public class ListViewHolder {
         public ImageView img;
     }
 
-    public ListAdapter(Context mContext) {
+    public SimpleListAdapter(Context mContext) {
         super(mContext);
     }
 
     @Override
     protected int getItemLayoutId() {
-        return R.layout.listview_adapter;
+        return R.layout.simple_listview_adapter;
     }
 
     @Override

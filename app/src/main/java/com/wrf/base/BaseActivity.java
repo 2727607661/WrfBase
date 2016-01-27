@@ -26,8 +26,6 @@ public class BaseActivity extends Activity {
 			mScreenWidth = metrics.widthPixels;
 			mScreenHeight = metrics.heightPixels;
 		}
-
-
 	}
 
 	public Activity getActivity() {
