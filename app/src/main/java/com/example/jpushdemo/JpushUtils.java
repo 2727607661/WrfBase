@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 
 public class JpushUtils {
 	public MessageReceiver mMessageReceiver;
-	public static String MESSAGE_RECEIVED_ACTION = "18touch-Template-Danji.MESSAGE_RECEIVED_ACTION";
+	public static String MESSAGE_RECEIVED_ACTION = "WRF-Template-Danji.MESSAGE_RECEIVED_ACTION";
 	public static final String KEY_TITLE = "title";
 	public static final String KEY_MESSAGE = "message";
 	public static final String KEY_EXTRAS = "extras";
