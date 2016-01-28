@@ -2,17 +2,15 @@ package com.wrf.base;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 
+import cn.jpush.android.api.JPushInterface;
+
 public class BaseActivity extends Activity {
-	private static int mScreenWidth, mScreenHeight;
 	private int currentPosition = 0;
 
 	protected Context context;
-	public static boolean isForeground = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +18,6 @@ public class BaseActivity extends Activity {
 		context = this;
 		if (savedInstanceState != null) {
 			currentPosition = savedInstanceState.getInt("currentPosition");
-		}
-		if (mScreenWidth == 0 || mScreenHeight == 0) {
-			DisplayMetrics metrics = getResources().getDisplayMetrics();
-			mScreenWidth = metrics.widthPixels;
-			mScreenHeight = metrics.heightPixels;
 		}
 	}
 
@@ -48,21 +41,6 @@ public class BaseActivity extends Activity {
 		finish();
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
-	public int getScreenWidth() {
-		return mScreenWidth;
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public int getScreenHeight() {
-		return mScreenHeight;
-	}
 
 	@SuppressWarnings("unchecked")
 	protected <T extends View> T $(View view, int ResId) {
@@ -79,27 +57,7 @@ public class BaseActivity extends Activity {
 		return (T) activity.findViewById(ResId);
 	}
 
-	/** 传参 跳转页面 */
-	protected void startActivity(Class<? extends  Activity> c,
-			String key, String value) {
-		Intent intent = new Intent(context, c);
-		intent.putExtra(key, value);
-		context.startActivity(intent);
-	}
 
-	/** 传参 跳转页面 */
-	protected void startActivity(Class<? extends Activity> c, String key,
-			boolean value) {
-		Intent intent = new Intent(context, c);
-		intent.putExtra(key, value);
-		context.startActivity(intent);
-	}
-
-
-	protected void startActivity(Class<? extends Activity> c) {
-		Intent intent = new Intent(context, c);
-		context.startActivity(intent);
-	}
 
 	/**
 	 * 友盟相关调用
@@ -109,7 +67,7 @@ public class BaseActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		isForeground = false;
+		JPushInterface.onPause(this);
 	}
 
 	/**
@@ -120,6 +78,6 @@ public class BaseActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		isForeground = true;
+		JPushInterface.onResume(this);
 	}
 }

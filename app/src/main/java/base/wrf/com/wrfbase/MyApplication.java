@@ -13,6 +13,8 @@ import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.io.File;
 
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * Created by wrf on 2016/1/25.
  */
@@ -23,6 +25,7 @@ public class MyApplication extends Application {
         super.onCreate();
         initOkHttp();
         initImageLoader();
+        initJPush();
     }
 
     /**
@@ -60,4 +63,12 @@ public class MyApplication extends Application {
         ImageLoader.getInstance().init(config);
     }
 
+    /**
+     * 初始化JPush
+     *
+     */
+    private void initJPush(){
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
+    }
 }
