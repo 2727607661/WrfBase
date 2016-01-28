@@ -52,6 +52,16 @@ public class SimplePulltorefreshListViewActivity extends Activity {
         });
 
 
+        //dangerous beside recognition listen marked absence perfect secret empty critical prove familiar
+        //card partly seriously grand elsewhere strike beat player necessarily commitment properly threat
+
+
+
+
+        //eastern Irish theatre crisis conflict slow reform expensive educational capacity respect
+        //absolutely whilst package weather totally procedure grey mental bear frequently sentence dealing
+
+
         listview.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_muen"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/red"
+            android:text="按钮1" />
+
+        <View style="@style/home_activity_bottom_item_vertical" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/red"
+            android:text="按钮2" />
+
+        <View style="@style/home_activity_bottom_item_vertical" />
+
+        <Button
+            android:id="@+id/btn_3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/red"
+            android:text="按钮3" />
+
+        <View style="@style/home_activity_bottom_item_vertical" />
+
+        <Button
+            android:id="@+id/btn_4"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/red"
+            android:text="按钮4" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/frameContent"
+        android:layout_width="fill_parent"
+        android:layout_above="@id/layout_muen"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
+</RelativeLayout>

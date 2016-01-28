@@ -41,9 +41,6 @@ public class BaseFragmentActivity extends FragmentActivity {
 		outState.putInt("currentPosition", currentPosition);
 	}
 
-
-
-
 	/**
 	 * 
 	 * @return 获取屏幕宽度

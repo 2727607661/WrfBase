@@ -22,7 +22,8 @@
             android:name="uk.co.senab.photoview.sample.ImagePagerActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity android:name="com.wrf.simple.SimpleListViewActivity" />
-        <activity android:name="com.wrf.simple.SimplePulltorefreshListViewActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
+        <activity android:name="com.wrf.simple.SimplePulltorefreshListViewActivity" />
+        <activity android:name="com.wrf.simple.SimpleFragmentTableActivity"/>
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.wrf.simple.SimplePulltorefreshListViewActivity;
+import com.wrf.simple.SimpleFragmentTableActivity;
 
 
 public class MainActivity extends Activity {
@@ -15,6 +15,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 
-        startActivity(new Intent(this,SimplePulltorefreshListViewActivity.class));
+        startActivity(new Intent(this,SimpleFragmentTableActivity.class));
     }
 }
