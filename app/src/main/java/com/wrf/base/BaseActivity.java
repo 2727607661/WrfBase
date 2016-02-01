@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
+import com.umeng.analytics.MobclickAgent;
+
 import cn.jpush.android.api.JPushInterface;
 
 public class BaseActivity extends Activity {
@@ -68,6 +70,7 @@ public class BaseActivity extends Activity {
 	protected void onPause() {
 		super.onPause();
 		JPushInterface.onPause(this);
+		MobclickAgent.onPause(this);
 	}
 
 	/**
@@ -79,5 +82,6 @@ public class BaseActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		JPushInterface.onResume(this);
+		MobclickAgent.onResume(this);
 	}
 }

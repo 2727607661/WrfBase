@@ -8,8 +8,12 @@ import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 
+import com.umeng.analytics.MobclickAgent;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.jpush.android.api.JPushInterface;
 
 public class BaseFragmentActivity extends FragmentActivity {
 	private static int mScreenWidth, mScreenHeight;
@@ -18,7 +22,6 @@ public class BaseFragmentActivity extends FragmentActivity {
 	private int currentPosition = 0;
 	private List<Class<? extends Fragment>> fragments = new ArrayList<Class<? extends Fragment>>();
 	private int containerId;
-	public static boolean isForeground = false;
 	protected Context context;
 	private boolean isCnzz = false;// 是否已经统计
 
@@ -65,7 +68,8 @@ public class BaseFragmentActivity extends FragmentActivity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		isForeground = false;
+		JPushInterface.onPause(this);
+		MobclickAgent.onPause(this);
 	}
 
 	/**
@@ -76,7 +80,8 @@ public class BaseFragmentActivity extends FragmentActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		isForeground = true;
+		JPushInterface.onResume(this);
+		MobclickAgent.onResume(this);
 	}
 
 	@SuppressWarnings("unchecked")

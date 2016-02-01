@@ -10,6 +10,8 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        // dex突破65535的限制
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -21,6 +23,14 @@ android {
         jniLibs.srcDirs = ['libs']  // <-- Set your folder here!
     }
 
+//    signingConfigs {
+//        release {
+//            keyAlias 'xxx'
+//            keyPassword 'xxx'
+//            storePassword 'xxx'
+//            storeFile file("../xxx")
+//        }
+//    }
 }
 
 dependencies {
@@ -31,4 +41,6 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.commit451:PhotoView:1.2.4'
     compile project(':pulltorefresh')
+    compile 'com.umeng.analytics:analytics:latest.integration'
+
 }
